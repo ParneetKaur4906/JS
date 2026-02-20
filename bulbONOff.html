@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb</title>
+</head>
+<body>
+    <h2>JavaScript can turn on/off a bulb</h2>
+    <img id = "bulb" src = "https://www.w3schools.com/js/pic_bulboff.gif" style="width:100px">
+    <br><br>
+    <button onclick = "bulbOn()">Turn ON </button>
+    <button onclick = "bulbOff()">Turn OFF </button>
+    <script>
+        function bulbOn(){
+            document.getElementById("bulb").src = "https://www.w3schools.com/js/pic_bulbon.gif";
+        }
+        function bulbOff(){
+            document.getElementById("bulb").src = "https://www.w3schools.com/js/pic_bulboff.gif";
+        }
+    </script>
+</body>
+</html>

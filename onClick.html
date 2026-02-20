@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <button onclick = "counter()">Click Counter</button>
+    <script>
+        function outer(){
+            let count = 0;
+            return function inner(){
+                count++;
+                alert("Count="+count);
+            };
+        }
+        const counter = outer();
+    </script>
+
+
+    <button onclick = "process(showMessage)">Click </button>
+    <script> 
+        function process(callback){
+            callback();
+        }
+        function showMessage(){
+            alert("Callback Function Executed");
+        }
+    </script>
+
+
+    <input type = "text" id = "name" placeholder = "Enter name">
+    <button onclick = "display()">Submit</button>
+    <p id = "output"></p>
+    <script>
+        const display =()=>{
+            let name = document.getElementById("name").value;
+            document.getElementById("output").innerText=`Welcome,${name}`;
+        }
+    </script>
+</body>
+</html>

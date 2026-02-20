@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align:center;
+            font-family: Arial;
+            transition: 0.5s;
+        }
+        button{
+            padding: 10px 15px;
+            margin: 10px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Dynamic Theme Changer</h2>
+    <button onclick = "changeColor()">Change Background Color</button>
+    <button onclick = "toggleMode()">Dark/Light Mode</button>
+    <script>
+        function getRandomColor(){
+            let letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0;i<6;i++){
+                color+=letters[Math.floor(Math.random()*16)];
+            }
+            return color;
+        }
+        function changeColor(){
+            document.body.style.backgroundColor = getRandomColor();
+        }
+        function toggleMode(){
+            if(document.body.style.backgroundColor === "black"){
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+            }
+            else{
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+            }
+        }
+    </script>
+</body>
+</html>

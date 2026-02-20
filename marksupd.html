@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Call by Value Example in JS</h2>
+    <p id = "before"></p>
+    <p id = "inside"></p>
+    <p id = "after"></p>
+    <button onclick = "updateMarks()">Update Marks</button>
+    <script>
+        function changeMarks(marks){
+            marks = 95;
+            document.getElementById("inside").innerHTML = "Marks inside function: " + marks;
+        }
+        function updateMarks(){
+            let studentMarks = 80;
+            document.getElementById("before").innerHTML = "Marks before function call: " + studentMarks;
+            changeMarks(studentMarks);
+            document.getElementById("after").innerHTML = "Marks after function call:"+studentMarks;
+        }
+    </script>
+</body>
+</html>
